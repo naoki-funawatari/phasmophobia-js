@@ -30,13 +30,13 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {items.map(item => {
+        {items.map((item, i) => {
           return (
-            <tr>
+            <tr key={i}>
               <td>{item.ghostId}</td>
               <td>{item.ghostName}</td>
-              {item.responsesNames.map(responsesName => {
-                return <td>{responsesName.responsesName}</td>;
+              {item.responsesNames.map((responsesName, j) => {
+                return <td key={j}>{responsesName.responsesName}</td>;
               })}
             </tr>
           );
