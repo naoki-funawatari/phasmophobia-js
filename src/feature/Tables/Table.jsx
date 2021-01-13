@@ -21,11 +21,13 @@ const Table = () => {
   return (
     <table className="ghost-table">
       <thead>
-        <th>ID</th>
-        <th>名称</th>
-        <th>証拠①</th>
-        <th>証拠②</th>
-        <th>証拠③</th>
+        <tr>
+          <th>ID</th>
+          <th>名称</th>
+          <th>証拠①</th>
+          <th>証拠②</th>
+          <th>証拠③</th>
+        </tr>
       </thead>
       <tbody>
         {items.map(item => {
