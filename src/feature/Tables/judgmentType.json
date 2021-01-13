@@ -1,0 +1,14 @@
+{
+  "undetermined": {
+    "id": 0,
+    "name": "未確定"
+  },
+  "determined": {
+    "id": 1,
+    "name": "確定"
+  },
+  "exclued": {
+    "id": 2,
+    "name": "除外"
+  }
+}
