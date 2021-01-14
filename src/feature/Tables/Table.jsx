@@ -1,43 +1,59 @@
-import React, { useState } from "react";
-import ghostRepository from "../../data/ghostRepository.json";
-import responseRepository from "../../data/responseRepository.json";
+import React from "react";
 import "./Table.scss";
-const Table = () => {
-  const ghosts = ghostRepository.ghosts;
-  const responses = responseRepository.responses;
-  const initialItems = ghosts.map(ghost => {
-    return {
-      ghostId: ghost.id,
-      ghostName: ghost.name,
-      responsesNames: ghost.responses.map(response => {
-        return {
-          responsesName: responses.find(o => o.id === response).name,
-        };
-      }),
-    };
-  });
-  const [items, setItem] = useState(initialItems);
-
+import judgmentType from "./judgmentType.json";
+const Table = ({ items, conditions }) => {
   return (
     <table className="ghost-table">
       <thead>
         <tr>
-          <th>ID</th>
           <th>名称</th>
           <th>証拠①</th>
           <th>証拠②</th>
           <th>証拠③</th>
+          <th>カウント</th>
         </tr>
       </thead>
       <tbody>
         {items.map((item, i) => {
+          let count = 0;
+          let isExclued = false;
           return (
             <tr key={i}>
-              <td>{item.ghostId}</td>
               <td>{item.ghostName}</td>
-              {item.responsesNames.map((responsesName, j) => {
-                return <td key={j}>{responsesName.responsesName}</td>;
+              {item.responses.map((response, j) => {
+                let irotagu = "undetermined";
+                const condition = conditions.find(
+                  o => o.responseId === response.id
+                );
+                if (condition.judgmentTypeId === judgmentType.determined.id) {
+                  irotagu = "determined";
+                  count++;
+                }
+                if (condition.judgmentTypeId === judgmentType.exclued.id) {
+                  irotagu = "exclued";
+                  isExclued = true;
+                }
+                return (
+                  <td key={j} className={irotagu}>
+                    {response.name}
+                  </td>
+                );
               })}
+              <td
+                className={
+                  isExclued
+                    ? "zoro"
+                    : count === 0
+                    ? "zoro"
+                    : count === 1
+                    ? "one"
+                    : count === 2
+                    ? "two"
+                    : "three"
+                }
+              >
+                {count}
+              </td>
             </tr>
           );
         })}

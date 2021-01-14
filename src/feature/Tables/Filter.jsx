@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import responseRepository from "../../data/responseRepository.json";
+import React from "react";
 import judgmentType from "./judgmentType.json";
 import "./Table.scss";
-const Filter = ({ initialItems, setItem }) => {
-  const responses = responseRepository.responses;
-  const initialConditions = responses.map(o => ({
-    responseId: o.id,
-    responseName: o.name,
-    judgmentTypeId: judgmentType.undetermined.id,
-  }));
-  const [conditions, setConditions] = useState(initialConditions);
+const Filter = ({
+  initialItems,
+  setItem,
+  responses,
+  conditions,
+  setConditions,
+}) => {
   const onConditionChecked = (responseId, judgmentTypeId) => () => {
     const newConditions = conditions.map(o => ({
       responseId: o.responseId,
@@ -19,7 +17,7 @@ const Filter = ({ initialItems, setItem }) => {
     }));
     setConditions(newConditions);
   };
-  console.table(conditions);
+
   return (
     <table className="ghost-table">
       <thead>
@@ -34,7 +32,13 @@ const Filter = ({ initialItems, setItem }) => {
         <tr>
           <td>未確定</td>
           {conditions.map((o, i) => (
-            <td key={i}>
+            <td
+              key={i}
+              onClick={onConditionChecked(
+                o.responseId,
+                judgmentType.undetermined.id
+              )}
+            >
               <input
                 type="radio"
                 onChange={onConditionChecked(
@@ -51,7 +55,13 @@ const Filter = ({ initialItems, setItem }) => {
         <tr>
           <td>確定</td>
           {conditions.map((o, i) => (
-            <td key={i}>
+            <td
+              key={i}
+              onClick={onConditionChecked(
+                o.responseId,
+                judgmentType.determined.id
+              )}
+            >
               <input
                 type="radio"
                 onChange={onConditionChecked(
@@ -68,7 +78,13 @@ const Filter = ({ initialItems, setItem }) => {
         <tr>
           <td>除外</td>
           {conditions.map((o, i) => (
-            <td key={i}>
+            <td
+              key={i}
+              onClick={onConditionChecked(
+                o.responseId,
+                judgmentType.exclued.id
+              )}
+            >
               <input
                 type="radio"
                 onChange={onConditionChecked(

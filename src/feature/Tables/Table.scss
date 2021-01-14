@@ -5,4 +5,25 @@
     border: solid black 1px;
     padding: 5px;
   }
+  td.undetermined{
+    background-color: #fff;
+  }
+  td.determined{
+    background-color: #ffe5f2;
+  }
+  td.exclued{
+    background-color: #e0efff;
+  }
+  td.zero{
+    background-color: #e0efff;
+  }
+  td.one{
+    background-color:#ffff5b;
+  }
+  td.two{
+    background-color:#ffad5b;
+  }
+  td.three{
+    background-color:#ff5b5b;
+  }
 }
