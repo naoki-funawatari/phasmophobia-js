@@ -42,9 +42,9 @@ const Table = ({ items, conditions }) => {
               <td
                 className={
                   isExclued
-                    ? "zoro"
+                    ? "exclued"
                     : count === 0
-                    ? "zoro"
+                    ? "zero"
                     : count === 1
                     ? "one"
                     : count === 2
