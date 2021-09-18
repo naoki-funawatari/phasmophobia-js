@@ -3,62 +3,82 @@
     {
       "id": 0,
       "name": "スピリット",
-      "responses": [3, 1, 5]
+      "responses": [0, 2, 5]
     },
     {
       "id": 1,
       "name": "レイス",
-      "responses": [3, 1, 2]
+      "responses": [0, 2, 6]
     },
     {
       "id": 2,
-      "name": "ファントム",
-      "responses": [0, 4, 2]
-    },
-    {
-      "id": 3,
-      "name": "ポルターガイスト",
-      "responses": [3, 1, 4]
-    },
-    {
-      "id": 4,
-      "name": "バンシー",
-      "responses": [0, 3, 2]
-    },
-    {
-      "id": 5,
-      "name": "ジン",
-      "responses": [0, 1, 4]
-    },
-    {
-      "id": 6,
-      "name": "メアー",
-      "responses": [1, 4, 2]
-    },
-    {
-      "id": 7,
-      "name": "レヴナント",
+      "name": "シェード",
       "responses": [0, 3, 5]
     },
     {
+      "id": 3,
+      "name": "鬼",
+      "responses": [0, 3, 6]
+    },
+    {
+      "id": 4,
+      "name": "メアー",
+      "responses": [1, 2, 5]
+    },
+    {
+      "id": 5,
+      "name": "妖怪",
+      "responses": [1, 2, 6]
+    },
+    {
+      "id": 6,
+      "name": "レヴナント",
+      "responses": [1, 3, 5]
+    },
+    {
+      "id": 7,
+      "name": "幽霊",
+      "responses": [1, 3, 6]
+    },
+    {
       "id": 8,
-      "name": "シェード",
+      "name": "マイリング",
       "responses": [0, 4, 5]
     },
     {
       "id": 9,
-      "name": "デーモン",
-      "responses": [1, 5, 2]
+      "name": "御霊",
+      "responses": [0, 4, 6]
     },
     {
       "id": 10,
-      "name": "幽霊",
-      "responses": [5, 4, 2]
+      "name": "ジン",
+      "responses": [0, 3, 4]
     },
     {
       "id": 11,
-      "name": "鬼",
-      "responses": [0, 1, 5]
+      "name": "デーモン",
+      "responses": [3, 4, 5]
+    },
+    {
+      "id": 12,
+      "name": "ハントゥ",
+      "responses": [1, 3, 4]
+    },
+    {
+      "id": 13,
+      "name": "バンシー",
+      "responses": [1, 4, 6]
+    },
+    {
+      "id": 14,
+      "name": "ポルターガイスト",
+      "responses": [2, 4, 5]
+    },
+    {
+      "id": 15,
+      "name": "ファントム",
+      "responses": [2, 4, 6]
     }
   ]
 }
