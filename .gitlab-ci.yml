@@ -1,0 +1,15 @@
+image: node:16-alpine3.11
+
+pages:
+  script:
+    - npm install -g npm
+    - yarn
+    - yarn build
+  artifacts:
+    paths:
+      - build
+  cache:
+    paths:
+      - node_modules
+  only:
+    - master
