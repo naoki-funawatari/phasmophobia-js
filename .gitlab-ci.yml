@@ -1,0 +1,19 @@
+
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - docker
+  variables: 
+    # Replace this with your site URL
+    PUBLIC_URL: https://192.168.2.2/phasmophobia-js/
+  script:
+    - npm install -g npm
+    - npm install -g node-gyp@6.1.0
+    - yarn install
+    - yarn build
+  artifacts:
+    paths:
+      - build/
