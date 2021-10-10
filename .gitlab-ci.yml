@@ -23,11 +23,4 @@ build:
   only:
     - master
   script:
-    - echo "Do your build here"
-    - npm install -g npm
-    - npm install
-    - npx run build
-  artifacts:
-    paths:
-      - build
-    
+    - echo $NODE_PATH
