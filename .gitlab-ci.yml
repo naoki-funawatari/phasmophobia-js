@@ -26,4 +26,7 @@ build:
     - echo "Do your build here"
     - npm install -g npm
     - yarn
+  artifacts:
+    paths:
+      - build
     
