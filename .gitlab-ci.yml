@@ -23,4 +23,5 @@ build:
   only:
     - master
   script:
+    - export NODE_PATH=`npm root -g`
     - echo $NODE_PATH
