@@ -37,7 +37,7 @@ build:
     - yarn install
   script:
     - yarn build
-    - mv public public_org && mv dist public
+    - mv public public_org && mv build public
   artifacts:
     paths:
       - public
