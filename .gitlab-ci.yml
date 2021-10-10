@@ -25,5 +25,5 @@ build:
   script:
     - echo "Do your build here"
     - npm install -g npm
-    - npm install -g yarn
+    - yarn
     
