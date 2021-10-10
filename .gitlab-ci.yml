@@ -23,10 +23,8 @@ build:
   only:
     - master
   script:
-    - export NODE_PATH=`npm root -g`
     - npm install -g npm
-    - npm install
-    - npx run build
+    - yarn
   artifacts:
     paths:
       - build
