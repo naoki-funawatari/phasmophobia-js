@@ -14,13 +14,15 @@ image: node:lts
 #   - echo "For example you might do some cleanup here"
 
 stages:
-    - build
-    - deploy
+  - build
+  - deploy
 
 build:
   stage: build
   tags: 
     - node
+  only:
+    - master
   script:
     - echo "Do your build here"
     - npm install -g npm
@@ -30,5 +32,7 @@ deploy:
   stage: deploy
   tags: 
     - node
+  only:
+    - master
   script:
     - echo "Do your deploy here"
