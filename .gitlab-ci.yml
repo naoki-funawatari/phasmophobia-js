@@ -4,6 +4,9 @@
 # you can delete this line if you're not using Docker
 image: node:lts
 
+# variables:
+#   GIT_SUBMODULE_STRATEGY: recursive
+
 # before_script:
 #   - echo "Before script section"
 #   - echo "For example you might run an update here or install a build dependency"
@@ -12,6 +15,7 @@ image: node:lts
 # after_script:
 #   - echo "After script section"
 #   - echo "For example you might do some cleanup here"
+
 
 stages:
   - build
@@ -22,10 +26,19 @@ build:
     - node
   only:
     - master
-  script:
+  cache:
+    paths:
+      - .cache/
+  before_script:
+    - mkdir -p .cache
+    - npm config set cache $CI_PROJECT_DIR/.cache/npm --global
+    - yarn config set cache-folder $CI_PROJECT_DIR/.cache/yarn
     - npm install -g npm
-    - yarn
+    - yarn install
+  script:
+    - yarn build
+    - mv public public_org && mv dist public
   artifacts:
     paths:
-      - build
+      - public
     
