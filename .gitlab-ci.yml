@@ -15,22 +15,30 @@ after_script:
 
 build1:
   stage: build
+  tags: 
+    - node
   script:
     - echo "Do your build here"
 
 test1:
   stage: test
+  tags: 
+    - node
   script:
     - echo "Do a test here"
     - echo "For example run a test suite"
 
 test2:
   stage: test
+  tags: 
+    - node
   script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
 
 deploy1:
   stage: deploy
+  tags: 
+    - node
   script:
     - echo "Do your deploy here"
