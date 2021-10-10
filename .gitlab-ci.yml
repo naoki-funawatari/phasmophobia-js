@@ -15,7 +15,6 @@ image: node:lts
 
 stages:
   - build
-  - deploy
 
 build:
   stage: build
@@ -28,11 +27,3 @@ build:
     - npm install -g npm
     - npm install -g yarn
     
-deploy:
-  stage: deploy
-  tags: 
-    - node
-  only:
-    - master
-  script:
-    - echo "Do your deploy here"
