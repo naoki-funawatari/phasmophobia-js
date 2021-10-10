@@ -25,7 +25,8 @@ build:
   script:
     - echo "Do your build here"
     - npm install -g npm
-    - yarn
+    - npm install
+    - npx run build
   artifacts:
     paths:
       - build
