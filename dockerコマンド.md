@@ -32,6 +32,29 @@ npm update chokidar@^2 --force
 
 cat package.json
 
+(GitLab Runner commands)[https://docs.gitlab.com/runner/commands/]
+
+gitlab-runner register
+http://192.168.2.2/
+LvZn83_ySuttpyfWa2oW
+node-runner
+node
+docker
+node:lts
+gitlab-runner verify
+gitlab-runner list
+gitlab-runner verify --delete
+
+gitlab-runner register
+--non-interactive
+--name my-runner &&
+--url http://192.168.2.2/ &&
+--registration-token LvZn83_ySuttpyfWa2oW &&
+--executor shell &&
+--tag-list node
+
+gitlab-runner verify --delete
+
 # `docker` について
 
 ## コマンド

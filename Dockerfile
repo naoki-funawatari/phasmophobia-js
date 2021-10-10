@@ -6,4 +6,3 @@
 #   npm install -g npm && \
 #   npm install -g yarn
 FROM node:lts
-RUN npm install -g npm

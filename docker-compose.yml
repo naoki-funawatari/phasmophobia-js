@@ -1,11 +1,11 @@
 version: "3.1"
 services:
   web:
-    # image: phasm
     image: phasm
+    # image: phasm-alpine
     build: .
-    # container_name: phasm
     container_name: phasm
+    # container_name: phasm-alpine
     working_dir: /app
     volumes:
       # ホスト側のディレクトリとファイルの状態を同期する。
