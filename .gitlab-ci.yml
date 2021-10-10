@@ -4,39 +4,27 @@
 # you can delete this line if you're not using Docker
 image: node:lts
 
-before_script:
-  - echo "Before script section"
-  - echo "For example you might run an update here or install a build dependency"
-  - echo "Or perhaps you might print out some debugging details"
+# before_script:
+#   - echo "Before script section"
+#   - echo "For example you might run an update here or install a build dependency"
+#   - echo "Or perhaps you might print out some debugging details"
 
-after_script:
-  - echo "After script section"
-  - echo "For example you might do some cleanup here"
+# after_script:
+#   - echo "After script section"
+#   - echo "For example you might do some cleanup here"
 
-build1:
+stages:
+    - build
+    - deploy
+
+build:
   stage: build
   tags: 
     - node
   script:
     - echo "Do your build here"
-
-test1:
-  stage: test
-  tags: 
-    - node
-  script:
-    - echo "Do a test here"
-    - echo "For example run a test suite"
-
-test2:
-  stage: test
-  tags: 
-    - node
-  script:
-    - echo "Do another parallel test here"
-    - echo "For example run a lint test"
-
-deploy1:
+    
+deploy:
   stage: deploy
   tags: 
     - node
