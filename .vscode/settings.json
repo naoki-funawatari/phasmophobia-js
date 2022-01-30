@@ -9,8 +9,5 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "tailwindCSS.emmetCompletions": true,
-  "files.associations": {
-    "*.scss": "postcss"
-  }
+  "tailwindCSS.emmetCompletions": true
 }
