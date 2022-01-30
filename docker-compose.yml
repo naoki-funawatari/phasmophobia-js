@@ -1,0 +1,20 @@
+version: "3.1"
+services:
+  web:
+    image: phasm
+    # image: phasm-alpine
+    build: .
+    container_name: phasm
+    # container_name: phasm-alpine
+    working_dir: /app
+    volumes:
+      # ホスト側のディレクトリとファイルの状態を同期する。
+      # working_dir に指定したディレクトリと一致させる。
+      - /c/Projects/phasmophobia-js:/app
+      # これが無いと極端にアプリケーションのパフォーマンスが低下する。
+      # node_modules 常に同期し続ける。狂気の沙汰。
+      - /app/node_modules
+    ports:
+      - 3001:3000
+    restart: always
+    tty: true
