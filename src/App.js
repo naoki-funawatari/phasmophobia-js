@@ -3,7 +3,7 @@ import Filter from "./feature/Tables/Filter";
 import Table from "./feature/Tables/Table";
 import ghostRepository from "./data/ghostRepository.json";
 import responseRepository from "./data/responseRepository.json";
-import judgmentType from "./feature/Tables/judgmentType.json";
+import judgmentType from "./data/judgmentType.json";
 
 const App = () => {
   const ghosts = ghostRepository.ghosts;

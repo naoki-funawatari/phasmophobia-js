@@ -1,6 +1,7 @@
 import React from "react";
 import "./Table.scss";
-import judgmentType from "./judgmentType.json";
+import judgmentType from "../../data/judgmentType.json";
+
 const Table = ({ items, conditions }) => {
   return (
     <table className="ghost-table">

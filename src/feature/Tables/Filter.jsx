@@ -1,6 +1,7 @@
 import React from "react";
-import judgmentType from "./judgmentType.json";
+import judgmentType from "../../data/judgmentType.json";
 import "./Table.scss";
+
 const Filter = ({
   initialItems,
   setItem,
