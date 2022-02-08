@@ -1,6 +1,6 @@
 import React from "react";
 import "./Table.scss";
-import judgmentType from "../../data/judgmentType.json";
+import judgmentTypes from "../../data/judgmentTypes.json";
 
 const Table = ({ items, conditions }) => {
   return (
@@ -26,11 +26,11 @@ const Table = ({ items, conditions }) => {
                 const condition = conditions.find(
                   o => o.responseId === response.id
                 );
-                if (condition.judgmentTypeId === judgmentType.determined.id) {
+                if (condition.judgmentTypeId === judgmentTypes.determined.id) {
                   irotagu = "determined";
                   count++;
                 }
-                if (condition.judgmentTypeId === judgmentType.exclued.id) {
+                if (condition.judgmentTypeId === judgmentTypes.exclued.id) {
                   irotagu = "exclued";
                   isExclued = true;
                 }

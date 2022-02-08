@@ -1,5 +1,5 @@
 import React from "react";
-import judgmentType from "../../data/judgmentType.json";
+import judgmentTypes from "../../data/judgmentTypes.json";
 import "./Table.scss";
 
 const Filter = ({
@@ -37,17 +37,17 @@ const Filter = ({
               key={i}
               onClick={onConditionChecked(
                 o.responseId,
-                judgmentType.undetermined.id
+                judgmentTypes.undetermined.id
               )}
             >
               <input
                 type="radio"
                 onChange={onConditionChecked(
                   o.responseId,
-                  judgmentType.undetermined.id
+                  judgmentTypes.undetermined.id
                 )}
                 checked={
-                  conditions[i].judgmentTypeId === judgmentType.undetermined.id
+                  conditions[i].judgmentTypeId === judgmentTypes.undetermined.id
                 }
               />
             </td>
@@ -60,17 +60,17 @@ const Filter = ({
               key={i}
               onClick={onConditionChecked(
                 o.responseId,
-                judgmentType.determined.id
+                judgmentTypes.determined.id
               )}
             >
               <input
                 type="radio"
                 onChange={onConditionChecked(
                   o.responseId,
-                  judgmentType.determined.id
+                  judgmentTypes.determined.id
                 )}
                 checked={
-                  conditions[i].judgmentTypeId === judgmentType.determined.id
+                  conditions[i].judgmentTypeId === judgmentTypes.determined.id
                 }
               />
             </td>
@@ -83,17 +83,17 @@ const Filter = ({
               key={i}
               onClick={onConditionChecked(
                 o.responseId,
-                judgmentType.exclued.id
+                judgmentTypes.exclued.id
               )}
             >
               <input
                 type="radio"
                 onChange={onConditionChecked(
                   o.responseId,
-                  judgmentType.exclued.id
+                  judgmentTypes.exclued.id
                 )}
                 checked={
-                  conditions[i].judgmentTypeId === judgmentType.exclued.id
+                  conditions[i].judgmentTypeId === judgmentTypes.exclued.id
                 }
               />
             </td>
