@@ -3,7 +3,9 @@ import Filter from "./feature/Tables/Filter";
 import Table from "./feature/Tables/Table";
 import ghostRepository from "./data/ghostRepository.json";
 import responseRepository from "./data/responseRepository.json";
-import judgmentType from "./data/judgmentType.json";
+import judgmentTypes from "./data/judgmentTypes.json";
+
+import Table2 from "./feature/Evidence/Table";
 
 const App = () => {
   const ghosts = ghostRepository.ghosts;
@@ -21,21 +23,27 @@ const App = () => {
   const initialConditions = responses.map(o => ({
     responseId: o.id,
     responseName: o.name,
-    judgmentTypeId: judgmentType.undetermined.id,
+    judgmentTypeId: judgmentTypes.undetermined.id,
   }));
   const [conditions, setConditions] = useState(initialConditions);
   return (
-    <div>
-      <Filter
-        initialItems={initialItems}
-        setItem={setItem}
-        responses={responses}
-        conditions={conditions}
-        setConditions={setConditions}
-      />
+    <>
+      <div>
+        <Table2 />
+      </div>
       <br />
-      <Table conditions={conditions} items={items} />
-    </div>
+      <div>
+        <Filter
+          initialItems={initialItems}
+          setItem={setItem}
+          responses={responses}
+          conditions={conditions}
+          setConditions={setConditions}
+        />
+        <br />
+        <Table conditions={conditions} items={items} />
+      </div>
+    </>
   );
 };
 
