@@ -7,7 +7,7 @@ import judgmentType from "./feature/Tables/judgmentType.json";
 
 const App = () => {
   const ghosts = ghostRepository.ghosts;
-  const responses = responseRepository.responses;
+  const responses = responseRepository;
   const initialItems = ghosts.map(ghost => {
     return {
       ghostId: ghost.id,
