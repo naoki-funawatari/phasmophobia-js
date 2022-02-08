@@ -13,7 +13,7 @@ const Data = () => {
             {responses.map(reseponse => {
               return (
                 <td key={`data-reseponse-id${reseponse.id}`}>
-                  {reseponse.name}
+                  <input type="radio" name="" id="" />
                 </td>
               );
             })}
