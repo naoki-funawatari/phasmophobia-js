@@ -2,8 +2,6 @@ import responses from "../../data/responseRepository.json";
 import judgmentTypes from "../../data/judgmentTypes.json";
 
 const Data = () => {
-  console.log([...Object.values(judgmentTypes)]);
-
   return (
     <tbody>
       {[...Object.values(judgmentTypes)].map(judgmentType => {
